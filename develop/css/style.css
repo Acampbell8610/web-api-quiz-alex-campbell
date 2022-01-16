@@ -1,0 +1,93 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+    font-size: 62.5%;
+    font-family:Arial, Helvetica, sans-serif;
+}
+body{
+    color: black;
+}
+header{
+    font-size: 100px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.container{
+    width: 100vw;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin:0 auto;
+    padding: 2rem;
+}
+
+
+h1{
+    font-size: 5.4rem;
+    color: black;
+    margin-bottom: 5rem;
+}
+
+
+.choice-container{
+    display: flex;
+    margin-bottom: 0.8rem;
+    width:100%;
+    border-radius: 15px;
+    background: purple;
+    font-size: 3rem;
+    min-width: 80rem;
+
+   
+}
+.choice-container:hover{
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(6, 103, 247, 0.5);
+    transform: scale(1.02);
+    transform: transform 100ms;
+}
+.choice-prefix{
+    padding: 2rem 2.5rem;
+    color: black;
+}
+
+.choice-text { 
+    padding: 2rem;
+    width: 100%;
+}
+
+.correct{
+    background: linear-gradient(32deg, rgba(11,223,36) 0%, rgb(41,232,111) 100%);
+}
+.incorrect{
+    background: linear-gradient(32deg, rgba(230,29,29,1) 0%, rgb(224,11,11,1) 100%);
+}
+/*heads up display here*/
+#hud {
+    display: flex;
+    justify-content: space-between;
+}
+.hud-prefix {
+    text-align: center;
+    font-size: 2rem;
+}
+.hud-main-text{
+    text-align: center;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .choice-conainer{
+        min-width: 40rem;
+    }
+};
