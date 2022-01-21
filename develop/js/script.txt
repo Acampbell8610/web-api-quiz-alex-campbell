@@ -7,14 +7,12 @@ const scoreText = document.querySelector('#score');
 const progressBarFull = document.querySelector('#progressBarFull');
 var start = document.querySelector("#startQuiz");
 var highScoreBtn= document.querySelector("#highScoreBtn")
-var newTime = 60;
-let reSet = false;
+
 let currentQuestion = {};
 let acceptingAnswers = true;
-let score = '';
+let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
-
 
 let questions = [
     {
@@ -52,27 +50,18 @@ const SCORE_POINTS = 100
 const MAX_QUESTIONS = 4
 
 // start game
-
 startGame = () =>{
     questionCounter=0
     score=0
     availableQuestions=[...questions]
     getNewQuestion()
-    countdown(60)
+    countdown()
 }
 getNewQuestion= () =>{
     if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS){
-    
-        
-        var name= prompt("Please enter your name", "name");
-        var scoreName= name 
-        var combo = scoreName.concat(" ", score)
-        localStorage.setItem('mostRecentScore', combo)
-        //timerEl.textContent = 0
-        reSet = true
-        return window.alert("Great Job! " + name +''+ score)
-        
+        localStorage.setItem('mostRecentScore', score)
 
+        return window.alert("Great Job!")
     }
 
     const questionIndex = Math.floor(Math.random()* availableQuestions.length)
@@ -89,7 +78,7 @@ getNewQuestion= () =>{
 }
  choices.forEach(choice => {
      choice.addEventListener('click', e=>{
-         if(!acceptingAnswers)return
+         if(!acceptingAnswers) return
 
          acceptingAnswers=false
          const selectedChoice = e.target;
@@ -101,58 +90,39 @@ getNewQuestion= () =>{
              incrementScore(SCORE_POINTS)
            
          }
-         if (classToApply=== 'incorrect'){
-            //subtract 10 from time
-            var currenttime = timerEl.textContent
-            var minusten = 10
-            newTime = timerEl.textContent = currenttime - minusten
-           // clearInterval(timeInterval)
-           // countdown(newTime)
-          
-        }
+
          selectedChoice.parentElement.classList.add(classToApply)
 
          setTimeout(() =>{
              selectedChoice.parentElement.classList.remove(classToApply)
              getNewQuestion()
-        
          },1000)
          })
  })
 
  incrementScore = num =>{
      score +=num
-    scoreText.innerText = score;
+     scoreText.innerText = score;
  }
 
  var timerEl = document.getElementById("countdown");
 var startButtonEl1 = document.getElementById ("start")
 
 //time interval
-function countdown(timeB){
-    var timeLeft = timeB;
+function countdown(){
+    var timeLeft = 60;
 
     var timeInterval = setInterval(function(){
-        if (timeLeft >= 1 || questionCounter > MAX_QUESTIONS ){
-            //timeLeft = newTime
+        if (timeLeft >= 1){
             timerEl.textContent = timeLeft;
             timeLeft--;
-           if(newTime < timeLeft){
-               timeLeft = newTime
-               timerEl.textContent = timeLeft;
-           }
-           if(reSet){
-                timerEl.textContent = '';
-                clearInterval(timeInterval)
-                
-           }
-        }
-        else{
+        }else{
             timerEl.textContent = '';
             clearInterval(timeInterval)
             window.alert("Game Over")
+
+            ;
         }
-        
     },1000);
 };
 
@@ -161,10 +131,7 @@ function countdown(timeB){
 
 start.addEventListener("click", function () {
     startGame()})
- highScoreBtn.addEventListener("click",function(){
-   alert( localStorage.getItem('mostRecentScore'))
-     
- })   
+    
 
 
     
