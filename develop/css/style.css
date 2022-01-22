@@ -53,12 +53,16 @@ h1{
 }
 .choice-prefix{
     padding: 2rem 2.5rem;
-    color: black;
+    color: white;
+    font-weight:bold ;
+    font-size: 20px;
 }
 
 .choice-text { 
     padding: 2rem;
     width: 100%;
+    color: white;
+    font-weight: bold;
 }
 
 .correct{
@@ -79,8 +83,21 @@ h1{
 .hud-main-text{
     text-align: center;
 }
-
-
+#startQuiz{
+    color: black;
+    background-color: rgb(154, 211, 69);
+    font-weight: bold;
+    border-radius: 10px;
+}
+#highScoreBtn{
+    color: black;
+    background-color: gold;
+    font-weight: bold;
+    border-radius: 10px;
+}
+#question{
+    text-align: center;
+}
 
 
 

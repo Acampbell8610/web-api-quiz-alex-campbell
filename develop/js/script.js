@@ -18,32 +18,32 @@ let availableQuestions = [];
 
 let questions = [
     {
-        question: 'What is 2 + 2 ?',
-        choice1: "2",
-        choice2: "4",
-        choice3: "21",
-        choice4: "17",
+        question: 'What does the "C" in CSS stand for ?',
+        choice1: "Corrupted",
+        choice2: "Cascading",
+        choice3: "Capital",
+        choice4: "Covid",
         answer: 2,
     },    {
-        question: 'What color is blue ?',
-        choice1: "2",
-        choice2: "4",
-        choice3: "red",
-        choice4: "blue",
+        question: 'What sybols would you use for comments in JS ?',
+        choice1: "/*",
+        choice2: "()",
+        choice3: "<!--",
+        choice4: "//",
         answer: 4,
     },    {
-        question: 'answer 5',
-        choice1: "B",
-        choice2: "purple",
-        choice3: "five",
-        choice4: "5",
+        question: 'What symbol represents ID in CSS?',
+        choice1: ".",
+        choice2: "=",
+        choice3: "*",
+        choice4: "#",
         answer: 4,
     },    {
-        question: 'last question',
-        choice1: "y",
-        choice2: "n",
-        choice3: "ty",
-        choice4: "boom",
+        question: 'Where do you put the link for Javascript in your HTML?',
+        choice1: "Bottom of Body",
+        choice2: "Top of Body",
+        choice3: "Footer",
+        choice4: "Head",
         answer: 1,
     },
 ]
@@ -70,8 +70,14 @@ getNewQuestion= () =>{
         localStorage.setItem('mostRecentScore', combo)
         //timerEl.textContent = 0
         reSet = true
-        return window.alert("Great Job! " + name +''+ score)
-        
+         window.alert("Great Job! " + name +''+ score)
+        var restartQ= window.confirm("Would you like to play again?");
+        if(restartQ){
+           return reload()
+           ;
+        }else{
+            alert("Thank you for playing");
+        }
 
     }
 
