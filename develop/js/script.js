@@ -73,10 +73,11 @@ getNewQuestion= () =>{
          window.alert("Great Job! " + name +''+ score)
         var restartQ= window.confirm("Would you like to play again?");
         if(restartQ){
-           return reload()
+           return  location.reload()
            ;
         }else{
             alert("Thank you for playing");
+            
         }
 
     }
@@ -157,6 +158,7 @@ function countdown(timeB){
             timerEl.textContent = '';
             clearInterval(timeInterval)
             window.alert("Game Over")
+            return location.reload()
         }
         
     },1000);

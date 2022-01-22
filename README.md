@@ -10,19 +10,20 @@ This a multiple choice quize with 4 questions. Each question is worth 100 pts. Y
 
 
 ## Instalation
-To install this projects locally use git bash ###
+To install this projects locally use git bash (https://github.com/Acampbell8610/web-api-quiz-alex-campbell)
 
 Open using Visual Studio Code
 
 
-Live URL is :###
+Live URL is : https://acampbell8610.github.io/web-api-quiz-alex-campbell/
 
 ## Uasage
 1. Click Start Game to begin.
 2. Answer all 4 multiple choice questions before the 60 seconds are up.
 3. Save your name to your score.
 
-![screenshot](###)
+![screenshot](develop/img/Quiz.png)
+![screenshot](develop/img/Quiz1.png))
 
 ## Credits
 - https://www.w3schools.com/js/default.asp
